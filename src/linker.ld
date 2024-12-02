@@ -6,6 +6,7 @@ SECTIONS
     .text : {*(.text)}
     .data : {*(.data)}
     .bss : {*(.bss)}
+    .align4KB : {*(.align4KB)}
     _end = .;
 }
 

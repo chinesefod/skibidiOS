@@ -3,7 +3,7 @@ IFLAG = -I ../ -I ./interrupts -I ./
 LDFLAGS = -T linker.ld
 
 kernel:
-#create object files, gcc and nasm
+#create object files
 
 	i386-elf-gcc $(CFLAGS) $(IFLAG) kernel.c 			-o kernel.o
 	i386-elf-gcc $(CFLAGS) $(IFLAG) util.c				-o util.o
@@ -36,8 +36,10 @@ kernel:
 #make disk image
 	grub-mkrescue -o ../skibidi.iso ../skibidi/
 
+
 clean:
 	rm -rf *.o
+
 
 emu:
 #emulate

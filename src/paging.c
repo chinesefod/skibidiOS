@@ -13,6 +13,7 @@ page_dir_t kernelPagedirectory;
 page_table_t kernelPagetable;
 
 
+
 void initKernelPagetables(page_table_t* p){
     
     return;

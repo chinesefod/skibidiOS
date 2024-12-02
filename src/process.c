@@ -12,8 +12,8 @@ uint32_t current_process;
 extern uint64_t ticks;
 
 /*
-1. spara regs i PCB
-2. nästa process?
+TODO:
+
 */
 
 
@@ -25,22 +25,10 @@ void initProcesses(){
     PCB[0].flags = 0;
 }
 
-void ontick(){
-    ticks += 1;
-    printf("tick\n");
-}
-
-void SKIBIDI(){
-    printf("timer");
-    return;
-}
-
 void initContextSwitching(){
     irq_install_handler(0, &context_switch);
     return;
 }
-
-
 
 void context_switch(struct InterruptRegisters* regs){
     ticks += 1;

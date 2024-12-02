@@ -9,7 +9,6 @@ typedef struct{
     disk_sector_t* memory_adress;
 }disk_task_t;
 
-void disk_read(disk_sector_t* destination, uint32_t LBA);
-void disk_identify(disk_sector_t* destination);
-void disk_init_interrupt();
+void init_disk_interrupt();
+int add_disk_queue(disk_sector_t* memory_adress, uint32_t LBA, char type);
 #endif

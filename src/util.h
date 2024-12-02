@@ -16,6 +16,8 @@ void outPortW(uint16_t port, uint16_t value);
 
 char inPortB(uint16_t port);
 
+int memcmp(void* p1, void* p2, uint32_t size);
+
 struct InterruptRegisters{
     uint32_t cr2;
     uint32_t ds;

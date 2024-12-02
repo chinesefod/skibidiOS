@@ -34,13 +34,13 @@ void kmain(uint32_t magic, struct multiboot_info* bootInfo){
     initTimer();
     initProcesses();
     initContextSwitching();
-    disk_init_interrupt();
+    init_disk_interrupt();
 
     disk_sector_t* test_disk_destination = kmalloc(sizeof(disk_sector_t));
     disk_sector_t* IDENTIFY_sector = kmalloc(sizeof(disk_sector_t));
 
-    disk_identify(IDENTIFY_sector);
-    disk_read(test_disk_destination, 0);
+    add_disk_queue(IDENTIFY_sector, 0, 'i');
+    add_disk_queue(test_disk_destination, 0, 'r');
     //disk_read(test_disk_destination, 1);
     
 
